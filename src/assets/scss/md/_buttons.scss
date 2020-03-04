@@ -38,7 +38,7 @@
 
     &,
     &.md-default{
-        @include btn-styles($gray-light);
+        @include btn-styles($teal);
     }
 
     &.md-primary{

@@ -66,7 +66,7 @@
         margin: -20px $margin-base 0;
         border-radius: $border-radius-base;
         padding: $padding-base;
-        background-color: $gray-color;
+        background: linear-gradient(60deg, $teal-400, $teal-600);
 
         .title{
             color: $white-color;
@@ -240,6 +240,36 @@
     .md-tabs.md-danger .md-tabs-navigation{
         background: linear-gradient(60deg, $red-400, $red-600);
         @include shadow-big-color($brand-danger);
+    }
+
+    [data-background-color="teal"], [data-background-color="default"],
+    .md-tabs.md-teal .md-tabs-navigation{
+        background: linear-gradient(60deg, $teal-400, $teal-600);
+        @include shadow-big-color($teal);
+    }
+
+    [data-background-color="indigo"],
+    .md-tabs.md-indigo .md-tabs-navigation{
+        background: linear-gradient(60deg, $indigo-400, $indigo-600);
+        @include shadow-big-color($indigo);
+    }
+
+    [data-background-color="deep-purple"],
+    .md-tabs.md-deep-purple .md-tabs-navigation{
+        background: linear-gradient(60deg, $deep-purple-400, $deep-purple-600);
+        @include shadow-big-color($deep-purple);
+    }
+
+    [data-background-color="real-blue"],
+    .md-tabs.md-real-blue .md-tabs-navigation{
+        background: linear-gradient(60deg, $blue-400, $blue-600);
+        @include shadow-big-color($blue);
+    }
+
+    [data-background-color="light-green"],
+    .md-tabs.md-light-green .md-tabs-navigation{
+        background: linear-gradient(60deg, $light-green-400, $light-green-600);
+        @include shadow-big-color($light-green);
     }
 
     [data-background-color]{

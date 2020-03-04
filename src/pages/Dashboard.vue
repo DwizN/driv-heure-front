@@ -2,7 +2,7 @@
   <div class="content">
     <div class="md-layout">
       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-45"
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-65"
       >
       <vue-cal style="height: 600px; background-color:white;" selected-date="2020-02-18"
          :time-from="8 * 60"
@@ -16,7 +16,7 @@
          :sticky-split-labels="vueCalendar.stickySplitLabels"
          :min-cell-width="vueCalendar.minCellWidth"
          :min-split-width="vueCalendar.minSplitWidth">
-</vue-cal>
+      </vue-cal>
         <!--<chart-card
           :chart-data="dailySalesChart.data"
           :chart-options="dailySalesChart.options"
@@ -49,7 +49,7 @@
           :chart-options="emailsSubscriptionChart.options"
           :chart-responsive-options="emailsSubscriptionChart.responsiveOptions"
           :chart-type="'Bar'"
-          data-background-color="red"
+          data-background-color="blue"
         >
           <template slot="content">
             <h4 class="title">Inscriptions auto-école</h4>
@@ -78,7 +78,7 @@
               <span class="text-success"
                 ><i class="fas fa-long-arrow-alt-up"></i> 55%
               </span>
-              de réussite deplus.
+              de réussite de plus.
             </p>
           </template>
 
@@ -93,7 +93,7 @@
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-22"
       >
-              <stats-card data-background-color="orange">
+              <stats-card data-background-color="indigo">
           <template slot="header">
             <md-icon>content_copy</md-icon>
           </template>
@@ -112,8 +112,11 @@
             </div>
           </template>
         </stats-card>
-
-                <stats-card data-background-color="red">
+      </div>
+        <div
+                class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-22"
+        >
+                <stats-card data-background-color="indigo">
           <template slot="header">
             <md-icon>info_outline</md-icon>
           </template>
@@ -130,8 +133,11 @@
             </div>
           </template>
         </stats-card>
-
-                <stats-card data-background-color="green">
+      </div>
+        <div
+                class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-22"
+        >
+                <stats-card data-background-color="indigo">
           <template slot="header">
             <md-icon>store</md-icon>
           </template>
@@ -151,9 +157,9 @@
 
       </div>
       <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
+        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-22"
       >
-        <stats-card data-background-color="green">
+        <stats-card data-background-color="deep-purple">
           <template slot="header">
             <md-icon>store</md-icon>
           </template>
@@ -170,109 +176,6 @@
             </div>
           </template>
         </stats-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="orange">
-          <template slot="header">
-            <md-icon>content_copy</md-icon>
-          </template>
-
-          <template slot="content">
-            <p class="category">Used Space</p>
-            <h3 class="title">
-              49/50
-              <small>GB</small>
-            </h3>
-          </template>
-
-          <template slot="footer">
-            <div class="stats">
-              <md-icon class="text-danger">warning</md-icon>
-              <a href="#pablo">Get More Space...</a>
-            </div>
-          </template>
-        </stats-card>
-
-        
-      </div>
-      <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="red">
-          <template slot="header">
-            <md-icon>info_outline</md-icon>
-          </template>
-
-          <template slot="content">
-            <p class="category">Fixed Issues</p>
-            <h3 class="title">75</h3>
-          </template>
-
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>local_offer</md-icon>
-              Tracked from Github
-            </div>
-          </template>
-        </stats-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="blue">
-          <template slot="header">
-            <i class="fab fa-twitter"></i>
-          </template>
-
-          <template slot="content">
-            <p class="category">Folowers</p>
-            <h3 class="title">+245</h3>
-          </template>
-
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>update</md-icon>
-              Just Updated
-            </div>
-          </template>
-        </stats-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-      >
-        <md-card>
-          <md-card-header data-background-color="orange">
-            <h4 class="title">Employees Stats</h4>
-            <p class="category">New employees on 15th September, 2016</p>
-          </md-card-header>
-          <md-card-content>
-            <ordered-table table-header-color="orange"></ordered-table>
-          </md-card-content>
-        </md-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-      >
-        <nav-tabs-card>
-          <template slot="content">
-            <span class="md-nav-tabs-title">Tasks:</span>
-            <md-tabs class="md-success" md-alignment="left">
-              <md-tab id="tab-home" md-label="Bugs" md-icon="bug_report">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
-
-              <md-tab id="tab-pages" md-label="Website" md-icon="code">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
-
-              <md-tab id="tab-posts" md-label="server" md-icon="cloud">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
-            </md-tabs>
-          </template>
-        </nav-tabs-card>
       </div>
     </div>
   </div>
@@ -293,10 +196,7 @@ export default {
   components: {
     VueCal,
     StatsCard,
-    ChartCard,
-    NavTabsCard,
-    NavTabsTable,
-    OrderedTable
+    ChartCard
   },
   data() {
     return {
