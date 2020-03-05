@@ -1,6 +1,7 @@
 import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
 import Dashboard from "@/pages/Dashboard.vue";
+import DashboardM from "../pages/DashboardM";
 import Dashboardc from "@/pages/Dashboardc.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import TableList from "@/pages/TableList.vue";
@@ -20,6 +21,11 @@ const routes = [
         path: "dashboard",
         name: "Dashboard",
         component: Dashboard
+      },
+      {
+        path: "dashboardM",
+        name: "Dashboard",
+        component: DashboardM
       },
       {
         path: "dashboardc",

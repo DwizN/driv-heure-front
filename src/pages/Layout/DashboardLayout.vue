@@ -8,6 +8,10 @@
         <md-icon>dashboard</md-icon>
         <p>Dashboard Secrétaire</p>
       </sidebar-link>
+      <sidebar-link to="/dashboardM">
+        <md-icon>dashboard</md-icon>
+        <p>Dashboard Moniteur</p>
+      </sidebar-link>
       <sidebar-link to="/dashboardc">
         <md-icon>dashboard</md-icon>
         <p>Dashboard Elève</p>
