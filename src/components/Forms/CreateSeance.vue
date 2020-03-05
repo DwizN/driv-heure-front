@@ -10,21 +10,20 @@
             <md-card-content>
                 <div class="md-layout">
                     <div class="md-layout-item md-small-size-100 md-size-100">
+                            <md-datepicker v-model="date">
+                                <label>Date</label>
+                            </md-datepicker>
+                    </div>
+                    <div class="md-layout-item md-xsmall-size-100 md-small-size-50 md-size-50">
                         <md-field>
-                            <label>Date</label>
-                            <md-input v-model="date" type="date"></md-input>
+                            <label class="time-label">Heure début</label>
+                            <md-input v-model="startTime" type="text"></md-input>
                         </md-field>
                     </div>
-                    <div class="md-layout-item md-small-size-100 md-size-50">
-                        <md-field>
-                            <label>Heure début</label>
-                            <md-input v-model="startTime" type="time"></md-input>
-                        </md-field>
-                    </div>
-                    <div class="md-layout-item md-small-size-100 md-size-50">
+                    <div class="md-layout-item md-xsmall-size-100 md-small-size-50 md-size-50">
                         <md-field>
                             <label>Heure fin</label>
-                            <md-input v-model="endTime" type="time"></md-input>
+                            <md-input v-model="endTime" type="text"></md-input>
                         </md-field>
                     </div>
                     <div class="md-layout-item md-small-size-100 md-size-50">
@@ -41,12 +40,7 @@
                     </div>
                     <div class="md-layout-item md-small-size-100 md-size-100">
                         <md-field>
-                            <md-radio v-model="type" value="conduite">conduite</md-radio>
-                            <md-radio v-model="type" value="code">code</md-radio>
-                        </md-field>
-                    </div>
-                    <div v-if="type=='conduite'" class="md-layout-item md-small-size-100 md-size-100">
-                        <md-field>
+                            <label>Moniteur</label>
                             <md-select v-model="moniteur" name="moniteur" placeholder="Moniteur">
                                 <md-option value="antoine">Antoine</md-option>
                                 <md-option value="gwen">Gwen</md-option>
@@ -65,15 +59,12 @@
 
 <script>
   export default {
-    name: "CreateSeance",
-    data() {
-      return {
-        type: ''
-      }
-    }
+    name: "CreateSeance"
   };
 </script>
 
 <style scoped>
-
+.time-label  {
+    transition: border .3s cubic-bezier(.4,0,.2,1),opacity .3s cubic-bezier(.4,0,.2,1),transform 0s cubic-bezier(.4,0,.2,1) .3s !important;
+}
 </style>
