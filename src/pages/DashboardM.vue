@@ -19,166 +19,6 @@
                          :min-cell-width="vueCalendar.minCellWidth"
                          :min-split-width="vueCalendar.minSplitWidth">
                 </vue-cal>
-                <!--<chart-card
-                  :chart-data="dailySalesChart.data"
-                  :chart-options="dailySalesChart.options"
-                  :chart-type="'Line'"
-                  data-background-color="blue"
-                >
-                  <template slot="content">
-                    <h4 class="title">Daily Sales</h4>
-                    <p class="category">
-                      <span class="text-success"
-                        ><i class="fas fa-long-arrow-alt-up"></i> 55%
-                      </span>
-                      increase in today sales.
-                    </p>
-                  </template>
-
-                  <template slot="footer">
-                    <div class="stats">
-                      <md-icon>access_time</md-icon>
-                      updated 4 minutes ago
-                    </div>
-                  </template>
-                </chart-card>-->
-            </div>
-            <div
-                    class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-33"
-            >
-                <chart-card
-                        :chart-data="emailsSubscriptionChart.data"
-                        :chart-options="emailsSubscriptionChart.options"
-                        :chart-responsive-options="emailsSubscriptionChart.responsiveOptions"
-                        :chart-type="'Bar'"
-                        data-background-color="blue"
-                >
-                    <template slot="content">
-                        <h4 class="title">Inscriptions auto-école</h4>
-                        <p class="category">
-                            Code + Permis
-                        </p>
-                    </template>
-
-                    <template slot="footer">
-                        <div class="stats">
-                            <md-icon>access_time</md-icon>
-                            mis à jour il y'a 6min.
-                        </div>
-                    </template>
-                </chart-card>
-
-                <chart-card
-                        :chart-data="dailySalesChart.data"
-                        :chart-options="dailySalesChart.options"
-                        :chart-type="'Line'"
-                        data-background-color="blue"
-                >
-                    <template slot="content">
-                        <h4 class="title">Réussite permis</h4>
-                        <p class="category">
-              <span class="text-success"
-              ><i class="fas fa-long-arrow-alt-up"></i> 55%
-              </span>
-                            de réussite de plus.
-                        </p>
-                    </template>
-
-                    <template slot="footer">
-                        <div class="stats">
-                            <md-icon>access_time</md-icon>
-                            Mis à jour il y'a 4min
-                        </div>
-                    </template>
-                </chart-card>
-            </div>
-
-            <div
-                    class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-22"
-            >
-                <stats-card data-background-color="indigo">
-                    <template slot="header">
-                        <md-icon>content_copy</md-icon>
-                    </template>
-
-                    <template slot="content">
-                        <p class="category">Dossiers</p>
-                        <h3 class="title">
-                            4
-                            <small>(+2)</small>
-                        </h3>
-                    </template>
-
-                    <template slot="footer">
-                        <div class="stats">
-                            <a href="#pablo">Accèder aux dossiers</a>
-                        </div>
-                    </template>
-                </stats-card>
-            </div>
-            <div
-                    class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-22"
-            >
-                <stats-card data-background-color="indigo">
-                    <template slot="header">
-                        <md-icon>info_outline</md-icon>
-                    </template>
-
-                    <template slot="content">
-                        <p class="category">Paiements</p>
-                        <h3 class="title">6</h3>
-                    </template>
-
-                    <template slot="footer">
-                        <div class="stats">
-                            <md-icon class="text-danger">warning</md-icon>
-                            <a href="#pablo">Voir les paiments refusés</a>
-                        </div>
-                    </template>
-                </stats-card>
-            </div>
-            <div
-                    class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-22"
-            >
-                <stats-card data-background-color="indigo">
-                    <template slot="header">
-                        <md-icon>store</md-icon>
-                    </template>
-
-                    <template slot="content">
-                        <p class="category">Trésorerie</p>
-                        <h3 class="title">3,214€</h3>
-                    </template>
-
-                    <template slot="footer">
-                        <div class="stats">
-                            <md-icon>date_range</md-icon>
-                            Le 26 janvier
-                        </div>
-                    </template>
-                </stats-card>
-
-            </div>
-            <div
-                    class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-22"
-            >
-                <stats-card data-background-color="indigo">
-                    <template slot="header">
-                        <md-icon>store</md-icon>
-                    </template>
-
-                    <template slot="content">
-                        <p class="category">Revenue</p>
-                        <h3 class="title">$34,245</h3>
-                    </template>
-
-                    <template slot="footer">
-                        <div class="stats">
-                            <md-icon>date_range</md-icon>
-                            Last 24 Hours
-                        </div>
-                    </template>
-                </stats-card>
             </div>
         </div>
     </div>
@@ -189,17 +29,13 @@
     import 'vue-cal/dist/vuecal.css'
     import {
         StatsCard,
-        ChartCard,
-        NavTabsCard,
-        NavTabsTable,
-        OrderedTable
     } from "@/components";
 
     export default {
         components: {
-            VueCal,
-            StatsCard,
-            ChartCard
+            VueCal
+            //StatsCard,
+
         },
         data() {
             return {
@@ -289,13 +125,8 @@
                 },
                 vueCalendar: {
                     stickySplitLabels: false,
-                    minCellWidth: 450,
+                    minCellWidth: 150,
                     minSplitWidth: 0,
-                    splitDays: [
-                        // The id property is added automatically if none (starting from 1), but you can set a custom one.
-                        // If you need to toggle the splits, you must set the id explicitly.
-                        { id: 1, class: 'mom', label: 'Antoine' }
-                    ],
                     events: [
                         {
                             start: '2020-02-18 09:00',
@@ -312,6 +143,15 @@
                             content: '<i class="v-icon material-icons">directions_car</i>',
                             class: 'health',
                             split: 1 // Has to match the id of the split you have set (or integers if none).
+                        },
+
+                        {
+                            start: '2020-02-18 13:00',
+                            end: '2020-02-18 14:00',
+                            title: 'PAUSE REPAS',
+                            class: 'lunch',
+                            background: true,
+                            split:1
                         },
 
                         {
