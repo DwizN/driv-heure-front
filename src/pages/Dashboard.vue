@@ -4,7 +4,9 @@
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-65"
       >
-      <vue-cal style="height: 600px; background-color:white;" selected-date="2020-02-18"
+      <vue-cal class="md-card" style="height: 600px; background-color:white;"
+               selected-date="2020-02-18"
+               default-view="day"
          :time-from="8 * 60"
          :time-to="20 * 60"
          :time-step="60"
@@ -42,7 +44,7 @@
         </chart-card>-->
       </div>
       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
+        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-33"
       >
         <chart-card
           :chart-data="emailsSubscriptionChart.data"
@@ -90,8 +92,9 @@
           </template>
         </chart-card>
       </div>
+
       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-22"
+        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-22"
       >
               <stats-card data-background-color="indigo">
           <template slot="header">
@@ -159,7 +162,7 @@
       <div
         class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-22"
       >
-        <stats-card data-background-color="deep-purple">
+        <stats-card data-background-color="indigo">
           <template slot="header">
             <md-icon>store</md-icon>
           </template>
@@ -379,6 +382,19 @@ stickySplitLabels: false,
 };
 </script>
 <style>
+    .vuecal__menu, .vuecal__cell-events-count {background-color: #009688; border-radius: 3px 3px 0 0;}
+    .vuecal__menu .vuecal__view-btn {color: #fff;}
+    .vuecal__title-bar {background-color: #e4f5ef;}
+    .vuecal__cell--today, .vuecal__cell--current {background-color: rgba(240, 240, 255, 0.4);}
+    .vuecal:not(.vuecal--day-view) .vuecal__cell--selected {background-color: rgba(235, 255, 245, 0.4);}
+    .vuecal__cell--selected:before {border-color: rgba(66, 185, 131, 0.5);}
+    /* Cells and buttons get highlighted when an event is dragged over it. */
+    .vuecal__cell--highlighted:not(.vuecal__cell--has-splits),
+    .vuecal__cell-split--highlighted {background-color: rgba(195, 255, 225, 0.5);}
+    .vuecal__arrow.vuecal__arrow--highlighted,
+    .vuecal__view-btn.vuecal__view-btn--highlighted {background-color: rgba(136, 236, 191, 0.25);}
+
+
 .vuecal__cell-split.dad {background-color: rgba(221, 238, 255, 0.5);}
 .vuecal__cell-split.mom {background-color: rgba(255, 232, 251, 0.5);}
 .vuecal__cell-split.kid1 {background-color: rgba(221, 255, 239, 0.5);}
@@ -388,7 +404,7 @@ stickySplitLabels: false,
 
 
 .vuecal__event.verif {background-color: rgba(253, 156, 66, 0.9);border: 1px solid rgb(233, 136, 46);color: #fff;}
-.vuecal__event.health {background-color: rgba(164, 230, 210, 0.9);border: 1px solid rgb(144, 210, 190);}
+.vuecal__event.health {background-color: #81d4fa;border: 1px solid rgb(144, 210, 190); color: #fff}
 .vuecal__event.sport {background-color: rgba(255, 102, 102, 0.9);border: 1px solid rgb(235, 82, 82);color: #fff;}
 
 .vuecal__event.lunch {
