@@ -6,7 +6,11 @@
       <mobile-menu slot="content"></mobile-menu>
       <sidebar-link to="/dashboard">
         <md-icon>dashboard</md-icon>
-        <p>Dashboard</p>
+        <p>Dashboard Secrétaire</p>
+      </sidebar-link>
+      <sidebar-link to="/dashboardc">
+        <md-icon>dashboard</md-icon>
+        <p>Dashboard Elève</p>
       </sidebar-link>
       <sidebar-link to="/user">
         <md-icon>person</md-icon>
@@ -36,6 +40,11 @@
         <md-icon>unarchive</md-icon>
         <p>Upgrade to PRO</p>
       </sidebar-link>-->
+      <!--
+      <md-button @click="isEleve">Eleve</md-button>
+      <md-button @click="isMoniteur">Moniteur</md-button>
+      <md-button @click="isSecretaire">Secretaire</md-button>
+      -->
     </side-bar>
 
     <div class="main-panel">
@@ -49,17 +58,37 @@
 </template>
 <style lang="scss"></style>
 <script>
-import TopNavbar from "./TopNavbar.vue";
-import ContentFooter from "./ContentFooter.vue";
-import DashboardContent from "./Content.vue";
-import MobileMenu from "@/pages/Layout/MobileMenu.vue";
+  import TopNavbar from "./TopNavbar.vue";
+  import ContentFooter from "./ContentFooter.vue";
+  import DashboardContent from "./Content.vue";
+  import MobileMenu from "@/pages/Layout/MobileMenu.vue";
 
-export default {
-  components: {
-    TopNavbar,
-    DashboardContent,
-    ContentFooter,
-    MobileMenu
-  }
-};
+  export default {
+    components: {
+      TopNavbar,
+      DashboardContent,
+      ContentFooter,
+      MobileMenu
+    },
+    data: function() {
+      return {
+        status: '',
+      }
+    },
+    created(){
+      if (!localStorage.status)
+        localStorage.status = status = "eleve";
+    },
+    methods: {
+      isEleve: function() {
+        localStorage.status = status = "eleve";
+      },
+      isMoniteur: function() {
+        localStorage.status = status = "moniteur";
+      },
+      isSecretaire: function() {
+        localStorage.status = status = "secretaire";
+      }
+    }
+  };
 </script>

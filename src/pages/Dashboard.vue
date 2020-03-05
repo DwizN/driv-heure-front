@@ -357,7 +357,7 @@ stickySplitLabels: false,
       content: '<i class="v-icon material-icons">directions_car</i>',
       class: 'health',
       split: 2
-    },  
+    },
         {
       start: '2020-02-18 13:00',
       end: '2020-02-18 14:00',
@@ -382,7 +382,7 @@ stickySplitLabels: false,
 };
 </script>
 <style>
-    .vuecal__menu, .vuecal__cell-events-count {background-color: #009688; border-radius: 3px 3px 0 0;}
+    .vuecal__menu, .vuecal__cell-events-count {background-color: #f57c00; border-radius: 3px 3px 0 0;}
     .vuecal__menu .vuecal__view-btn {color: #fff;}
     .vuecal__title-bar {background-color: #e4f5ef;}
     .vuecal__cell--today, .vuecal__cell--current {background-color: rgba(240, 240, 255, 0.4);}
