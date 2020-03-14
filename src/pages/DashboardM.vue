@@ -167,6 +167,7 @@
             };
         }
     };
+    
 </script>
 <style>
     .vuecal__menu, .vuecal__cell-events-count {background-color: #f57c00; border-radius: 3px 3px 0 0;}
