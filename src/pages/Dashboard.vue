@@ -131,7 +131,7 @@
 
           <template slot="footer">
             <div class="stats">
-                            <md-icon class="text-danger">warning</md-icon>
+              <md-icon class="text-danger">warning</md-icon>
               <a href="#pablo">Voir les paiments refusés</a>
             </div>
           </template>
