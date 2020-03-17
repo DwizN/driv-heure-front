@@ -85,24 +85,33 @@
         },
         methods: {
             simulerConnexion: function () {
-              this.members.forEach(e => {
-                //console.log(this.email + ' & ' + this.pass)
+                this.members.forEach(e => {
+                console.log(this.email + ' & ' + this.pass)
                 if(e.email === this.email && e.password === this.pass){
                     switch(e.role) {
                         case 'SECRETAIRE':
-                            this.$router.push({ name: 'Dashboard' })
+                            this.$router.push({ name: 'DashboardSecretaire'})
+                            localStorage.setItem('statut', 'SECRETAIRE');
+                            localStorage.setItem('infosUser', JSON.stringify(e));
+                            console.log(e)
                             break;
                         case 'ELEVE':
-                            this.$router.push({ name: 'Dashboardm' })
+                            this.$router.push({ name: 'DashboardEleve'})
+                            localStorage.setItem('statut', 'ELEVE');
+                            localStorage.setItem('infosUser', JSON.stringify(e));
+                            console.log(e)
                             break;
                         case 'MONITEUR':
-                            this.$router.push({ name: 'Dashboardc' })
+                            this.$router.push({ name: 'DashboardMoniteur'})
+                            localStorage.setItem('statut', 'MONITEUR');
+                            localStorage.setItem('infosUser', JSON.stringify(e));
+                            console.log(e)
                             break;
                         default:
                             break;
-                        }
+                        } 
                 }
-              })
+            })
             }
         }
     }
