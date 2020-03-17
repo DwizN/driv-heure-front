@@ -27,6 +27,7 @@
                             <md-select v-model="newSeance.type" name="type" placeholder="Type">
                                 <md-option value="Conduite">Conduite</md-option>
                                 <md-option value="Examen du Code">Examen du Code</md-option>
+                                <md-option value="Examen du Permis">Examen du Permis</md-option>
                             </md-select>
                         </md-field>
                     </div>
