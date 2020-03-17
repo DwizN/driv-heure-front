@@ -23,7 +23,7 @@
                 </vue-cal>
             </div>
             <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-35" id="student">
-                <student-folder v-if="boxIsVisible" :eleve="eleve"></student-folder> <!-- Ici tu passes ton objet élève qui va être dispo dans tes datas de create-sence -->
+                <student-folder v-on:form-closed="formClosed" v-if="boxIsVisible" :eleve="eleve"></student-folder> <!-- Ici tu passes ton objet élève qui va être dispo dans tes datas de create-sence -->
 
             </div>
         </div>
@@ -144,7 +144,7 @@
                         {
                             start: '2020-02-18 09:00',
                             end: '2020-02-18 11:00',
-                            title: 'LECOEUCHE',
+                            title: 'conduite - Lecoeuche. A',
                             content: '<i class="v-icon material-icons">directions_car</i>',
                             class: 'health',
                             split: 1 // Has to match the id of the split you have set (or integers if none).
@@ -152,7 +152,7 @@
                         {
                             start: '2020-02-18 11:00',
                             end: '2020-02-18 13:00',
-                            title: 'BENRHINMA',
+                            title: 'Conduite - Benhrinma. M',
                             content: '<i class="v-icon material-icons">directions_car</i>',
                             class: 'health',
                             split: 1 // Has to match the id of the split you have set (or integers if none).
@@ -170,7 +170,7 @@
                         {
                             start: '2020-02-18 14:00',
                             end: '2020-02-18 17:00',
-                            title: 'VALISE',
+                            title: 'Conduite - Valise. B',
                             content: '<i class="v-icon material-icons">directions_car</i>',
                             class: 'health',
                             split: 1 // Has to match the id of the split you have set (or integers if none).
@@ -204,6 +204,9 @@
                     }
                 })
 
+            },
+            formClosed: function () {
+                this.boxIsVisible = false;
             }
         }
 
