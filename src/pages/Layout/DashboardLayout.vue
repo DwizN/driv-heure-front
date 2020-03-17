@@ -85,6 +85,8 @@
     },
     methods: {
       getStatus: function(statut){
+        let test = localStorage.getItem("infosUser");
+        console.log(JSON.parse(test))
         return localStorage.getItem("statut") === statut
       }
     }

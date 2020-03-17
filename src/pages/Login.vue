@@ -90,19 +90,22 @@
                 if(e.email === this.email && e.password === this.pass){
                     switch(e.role) {
                         case 'SECRETAIRE':
-                            this.$router.push({ name: 'DashboardSecretaire', params: {member: e }})
+                            this.$router.push({ name: 'DashboardSecretaire'})
                             localStorage.setItem('statut', 'SECRETAIRE');
-                            localStorage.setItem('infosUser', e);
+                            localStorage.setItem('infosUser', JSON.stringify(e));
+                            console.log(e)
                             break;
                         case 'ELEVE':
-                            this.$router.push({ name: 'DashboardEleve', params: {member: e }})
+                            this.$router.push({ name: 'DashboardEleve'})
                             localStorage.setItem('statut', 'ELEVE');
-                            localStorage.setItem('infosUser', e);
+                            localStorage.setItem('infosUser', JSON.stringify(e));
+                            console.log(e)
                             break;
                         case 'MONITEUR':
-                            this.$router.push({ name: 'DashboardMoniteur', params: {member: e } })
+                            this.$router.push({ name: 'DashboardMoniteur'})
                             localStorage.setItem('statut', 'MONITEUR');
-                            localStorage.setItem('infosUser', e);
+                            localStorage.setItem('infosUser', JSON.stringify(e));
+                            console.log(e)
                             break;
                         default:
                             break;
