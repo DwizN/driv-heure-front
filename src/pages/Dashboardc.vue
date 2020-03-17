@@ -18,11 +18,11 @@
                          :sticky-split-labels="vueCalendar.stickySplitLabels"
                          :min-cell-width="vueCalendar.minCellWidth"
                          :min-split-width="vueCalendar.minSplitWidth"
-                         :on-event-click="simuleStudentFolder">
+                         >
                 </vue-cal>
             </div>
             <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-35">
-                <create-seance v-if="boxIsVisible" :eleve="eleve"></create-seance> <!-- Ici tu passes ton objet élève qui va être dispo dans tes datas de create-sence -->
+                <create-seance></create-seance>
             </div>
         </div>
     </div>
@@ -45,9 +45,6 @@
     },
     data() {
       return {
-        boxIsVisible: false,
-        eleve: {}, // Ici tu vas alimenter ton objet (surement un élève ? que tu vas passer en props à ton composant create-seance)
-
         dailySalesChart: {
           data: {
             labels: ["M", "T", "W", "T", "F", "S", "S"],
@@ -148,11 +145,6 @@
           ]
         }
       };
-    },
-    methods: {
-      simuleStudentFolder: function () {
-        this.boxIsVisible = true
-      }
     }
   };
 </script>
