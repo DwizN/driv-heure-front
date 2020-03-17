@@ -85,24 +85,30 @@
         },
         methods: {
             simulerConnexion: function () {
-      this.members.forEach(e => {
-        console.log(this.email + ' & ' + this.pass)
-        if(e.email === this.email && e.password === this.pass){
-            switch(e.role) {
-                case 'SECRETAIRE':
-                    this.$router.push({ name: 'Dashboard', params: {member: e }})
-                    break;
-                case 'ELEVE':
-                    this.$router.push({ name: 'Dashboardm', params: {member: e }})
-                    break;
-                case 'MONITEUR':
-                    this.$router.push({ name: 'Dashboardc', params: {member: e } })
-                    break;
-                default:
-                    break;
-                } 
-        }
-      })
+                this.members.forEach(e => {
+                console.log(this.email + ' & ' + this.pass)
+                if(e.email === this.email && e.password === this.pass){
+                    switch(e.role) {
+                        case 'SECRETAIRE':
+                            this.$router.push({ name: 'DashboardSecretaire', params: {member: e }})
+                            localStorage.setItem('statut', 'SECRETAIRE');
+                            localStorage.setItem('infosUser', e);
+                            break;
+                        case 'ELEVE':
+                            this.$router.push({ name: 'DashboardEleve', params: {member: e }})
+                            localStorage.setItem('statut', 'ELEVE');
+                            localStorage.setItem('infosUser', e);
+                            break;
+                        case 'MONITEUR':
+                            this.$router.push({ name: 'DashboardMoniteur', params: {member: e } })
+                            localStorage.setItem('statut', 'MONITEUR');
+                            localStorage.setItem('infosUser', e);
+                            break;
+                        default:
+                            break;
+                        } 
+                }
+            })
             }
         }
     }
