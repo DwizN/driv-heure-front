@@ -22,7 +22,7 @@
                 </vue-cal>
             </div>
             <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-35">
-                <create-seance v-if="boxIsVisible" :eleve="eleve" data-background-color="teal"
+                <create-seance data-background-color="teal"
                                v-on:new-seance="addSeance" />
             </div>
         </div>
@@ -163,9 +163,6 @@
             split: 1 // Has to match the id of the split you have set (or integers if none).
           }
         )
-      },
-      simuleStudentFolder: function () {
-        this.boxIsVisible = true
       }
     }
   };
