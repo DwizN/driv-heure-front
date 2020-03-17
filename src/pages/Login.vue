@@ -23,10 +23,10 @@
                 </md-field>
                 <md-field>
                     <label>Password</label>
-                    <md-input v-model="password" type="password"></md-input>
+                    <md-input v-model="pass" type="password"></md-input>
                 </md-field>
                 <a href="#">Mot de passe oublié ?</a>
-                <md-button>Se connecter</md-button>
+                <md-button v-on:click="simulerConnexion">Se connecter</md-button>
             </form>
             <form class="sign-up" action="#">
                 <h2>Créer un compte</h2>
@@ -64,9 +64,45 @@
 
 <script>
     export default {
+        name: 'Login',
         data: () => {
             return{
-                signUp: false
+                signUp: false,
+                email: '',
+                pass: '',
+                code: '',
+                password:'',
+                compagnie:'',
+                mail :'',
+                // Gros bouchon pour simuler la connexion à la BDD 
+                members:[
+                    {"email": "antoine@antoine.fr","firstName":"Antoine", "lastName":"OFFROY", "password": "antoine", "role" : "SECRETAIRE"},
+                    {"email": "axel@axel.fr","firstName":"Axel", "lastName":"Lecoeuche", "password": "axel", "role" : "ELEVE"},
+                    {"email": "simon@simon.fr","firstName":"Simon", "lastName":"El-Clerbout", "password": "simon", "role" : "MONITEUR"},
+                    {"email": "comprenpas@mouad.fr","firstName":"Mouad", "lastName":"ComprendPas", "password": "antoine",  "role" : "ELEVE"}
+                ]
+            }
+        },
+        methods: {
+            simulerConnexion: function () {
+      this.members.forEach(e => {
+        console.log(this.email + ' & ' + this.pass)
+        if(e.email === this.email && e.password === this.pass){
+            switch(e.role) {
+                case 'SECRETAIRE':
+                    this.$router.push({ name: 'Dashboard' })
+                    break;
+                case 'ELEVE':
+                    this.$router.push({ name: 'Dashboardm' })
+                    break;
+                case 'MONITEUR':
+                    this.$router.push({ name: 'Dashboardc' })
+                    break;
+                default:
+                    break;
+                } 
+        }
+      })
             }
         }
     }

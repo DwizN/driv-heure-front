@@ -15,6 +15,11 @@ import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
 const routes = [
   {
     path: "/",
+    name: "Login Page",
+    component: Login
+  },
+  {
+    path: "/",
     component: DashboardLayout,
     redirect: "/dashboard",
     children: [
@@ -25,12 +30,12 @@ const routes = [
       },
       {
         path: "dashboardM",
-        name: "Dashboard",
+        name: "Dashboardm",
         component: DashboardM
       },
       {
         path: "dashboardc",
-        name: "Dashboard",
+        name: "Dashboardc",
         component: Dashboardc
       },
       {
@@ -72,11 +77,6 @@ const routes = [
         component: UpgradeToPRO
       }
     ]
-  },
-  {
-    path: "/login",
-    name: "Login Page",
-    component: Login
   }
 ];
 
