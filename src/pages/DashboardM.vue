@@ -4,7 +4,8 @@
             <div
                     class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-65"
             >
-                <vue-cal class="md-card" style="height: 600px; background-color:white;"
+                <vue-cal class="md-card"
+                         style="height: 600px; background-color:white;"
                          selected-date="2020-02-18"
                          default-view="day"
                          :time-from="8 * 60"
@@ -17,8 +18,13 @@
                          :split-days="vueCalendar.splitDays"
                          :sticky-split-labels="vueCalendar.stickySplitLabels"
                          :min-cell-width="vueCalendar.minCellWidth"
-                         :min-split-width="vueCalendar.minSplitWidth">
+                         :min-split-width="vueCalendar.minSplitWidth"
+                         :on-event-click="simuleStudentFolder">
                 </vue-cal>
+            </div>
+            <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-35" id="student">
+                <student-folder v-if="boxIsVisible" :eleve="eleve"></student-folder> <!-- Ici tu passes ton objet élève qui va être dispo dans tes datas de create-sence -->
+
             </div>
         </div>
     </div>
@@ -30,15 +36,22 @@
     import {
         StatsCard,
     } from "@/components";
+    import StudentFolder from "../components/Forms/StudentFolder";
 
     export default {
         components: {
+            StudentFolder,
             VueCal
-            //StatsCard,
-
         },
         data() {
             return {
+                boxIsVisible: false,
+                eleves: [
+                    {"nom":"LECOEUCHE","prenom":"Axel", "date":"18/10/1998", "heures": "20", "isCode" : "OUI", "points": "demi-tour en 3 temps, voyant moteur"},
+                    {"nom":"BENRHINMA","prenom":"Mouad", "date":"01/04/1995", "heures": "108", "isCode" : "NON"},
+                    {"nom":"VALISE","prenom":"Bernard", "date":"01/12/12000", "heures": "6", "isCode" : "OUI"}
+                ], // Ici tu vas alimenter ton objet (surement un élève ? que tu vas passer en props à ton composant create-seance)
+
                 dailySalesChart: {
                     data: {
                         labels: ["M", "T", "W", "T", "F", "S", "S"],
@@ -115,7 +128,7 @@
                             {
                                 seriesBarDistance: 5,
                                 axisX: {
-                                    labelInterpolationFnc: function(value) {
+                                    labelInterpolationFnc: function (value) {
                                         return value[0];
                                     }
                                 }
@@ -131,7 +144,7 @@
                         {
                             start: '2020-02-18 09:00',
                             end: '2020-02-18 11:00',
-                            title: 'Conduite - Axel L.',
+                            title: 'LECOEUCHE',
                             content: '<i class="v-icon material-icons">directions_car</i>',
                             class: 'health',
                             split: 1 // Has to match the id of the split you have set (or integers if none).
@@ -139,7 +152,7 @@
                         {
                             start: '2020-02-18 11:00',
                             end: '2020-02-18 13:00',
-                            title: 'Conduite - Mouad B.',
+                            title: 'BENRHINMA',
                             content: '<i class="v-icon material-icons">directions_car</i>',
                             class: 'health',
                             split: 1 // Has to match the id of the split you have set (or integers if none).
@@ -151,23 +164,52 @@
                             title: 'PAUSE REPAS',
                             class: 'lunch',
                             background: true,
-                            split:1
+                            split: 1
                         },
 
                         {
                             start: '2020-02-18 14:00',
                             end: '2020-02-18 17:00',
-                            title: 'Conduite - Valise .B',
+                            title: 'VALISE',
                             content: '<i class="v-icon material-icons">directions_car</i>',
                             class: 'health',
                             split: 1 // Has to match the id of the split you have set (or integers if none).
                         }
                     ]
+                },
+                StudentFolder: {
+                    el: '#student',
+                    nom: '',
+                    prenom: '',
+                    date: '',
+                    heures: '',
+                    isCode: '',
+                    points: '',
                 }
+
             };
+        },
+        methods: {
+            simuleStudentFolder: function () {
+                this.boxIsVisible = true
+                this.eleves.forEach(e => {
+                    if(e.nom === "LECOEUCHE"){
+                        this.boxIsVisible = true
+                        this.$emit('Axel', )
+                    }
+                    else if(e.nom === "BENRHINMA"){
+                                this.boxIsVisible = true
+                                this.$emit('Mouad', )
+
+                    }
+                })
+
+            }
         }
+
     };
-    
+
+
 </script>
 <style>
     .vuecal__menu, .vuecal__cell-events-count {background-color: #f57c00; border-radius: 3px 3px 0 0;}
