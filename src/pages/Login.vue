@@ -34,7 +34,7 @@
                     <div class="md-layout-item md-small-size-100 md-size-100">
                         <md-field>
                             <label>Nom</label>
-                            <md-input v-model="compagnie" type="text"></md-input>
+                            <md-input v-model="nom" type="text"></md-input>
                         </md-field>
                     </div>
                     <div class="md-layout-item md-small-size-100 md-size-100">
@@ -72,7 +72,7 @@
                 pass: '',
                 code: '',
                 password:'',
-                compagnie:'',
+                nom:'',
                 mail :'',
                 // Gros bouchon pour simuler la connexion à la BDD 
                 members:[
@@ -85,24 +85,24 @@
         },
         methods: {
             simulerConnexion: function () {
-      this.members.forEach(e => {
-        console.log(this.email + ' & ' + this.pass)
-        if(e.email === this.email && e.password === this.pass){
-            switch(e.role) {
-                case 'SECRETAIRE':
-                    this.$router.push({ name: 'Dashboard' })
-                    break;
-                case 'ELEVE':
-                    this.$router.push({ name: 'Dashboardm' })
-                    break;
-                case 'MONITEUR':
-                    this.$router.push({ name: 'Dashboardc' })
-                    break;
-                default:
-                    break;
-                } 
-        }
-      })
+              this.members.forEach(e => {
+                //console.log(this.email + ' & ' + this.pass)
+                if(e.email === this.email && e.password === this.pass){
+                    switch(e.role) {
+                        case 'SECRETAIRE':
+                            this.$router.push({ name: 'Dashboard' })
+                            break;
+                        case 'ELEVE':
+                            this.$router.push({ name: 'Dashboardm' })
+                            break;
+                        case 'MONITEUR':
+                            this.$router.push({ name: 'Dashboardc' })
+                            break;
+                        default:
+                            break;
+                        }
+                }
+              })
             }
         }
     }
