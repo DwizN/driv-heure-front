@@ -195,11 +195,11 @@
                 this.eleves.forEach(e => {
                     if(e.nom === "LECOEUCHE"){
                         this.boxIsVisible = true
-                        this.$emit({name: 'Axel', params: {eleve: e }})
+                        this.$emit('Axel', )
                     }
                     else if(e.nom === "BENRHINMA"){
                                 this.boxIsVisible = true
-                                this.$emit({ name: 'Mouad', params: {eleve: e }})
+                                this.$emit('Mouad', )
 
                     }
                 })
