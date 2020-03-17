@@ -1,8 +1,8 @@
 import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
 import Dashboard from "@/pages/Dashboard.vue";
-import Login from "../pages/Login";
-import DashboardM from "../pages/DashboardM";
+import Login from "@/pages/Login.vue";
+import DashboardM from "@/pages/DashboardM.vue";
 import Dashboardc from "@/pages/Dashboardc.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import Notifications from "@/pages/Notifications.vue";
