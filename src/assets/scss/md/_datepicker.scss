@@ -1,0 +1,27 @@
+.md-datepicker-dialog {
+  &.md-theme-default .md-datepicker-header {
+    background-color: $teal;
+  }
+
+  .md-button {
+    background: transparent !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .md-button:hover {
+    background-color: #eee !important;
+  }
+
+  .md-button.md-primary {
+    background-color: $teal !important;
+    color: #fff !important;
+  }
+
+  &.md-theme-default .md-datepicker-day-button.md-datepicker-selected {
+    background-color: $teal !important;
+    color: #fff !important;
+  }
+}

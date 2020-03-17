@@ -21,7 +21,8 @@
                 </vue-cal>
             </div>
             <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-35">
-                <create-seance></create-seance>
+                <create-seance data-background-color="teal"
+                               v-on:new-seance="addSeance" />
             </div>
         </div>
     </div>
@@ -144,6 +145,21 @@
           ]
         }
       };
+    },
+    methods: {
+      addSeance: function (seance) {
+
+        this.vueCalendar.events.push(
+          {
+            start: seance.day + ' ' + seance.startTime,
+            end: seance.day + ' ' + seance.endTime,
+            title: seance.type + ' - ' + seance.firstname + ' ' + seance.lastname + ' / ' + seance.moniteur,
+            content: '<i class="v-icon material-icons">directions_car</i>',
+            class: 'health',
+            split: 1 // Has to match the id of the split you have set (or integers if none).
+          }
+        )
+      }
     }
   };
 </script>
