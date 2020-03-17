@@ -4,15 +4,15 @@
 
     <side-bar>
       <mobile-menu slot="content"></mobile-menu>
-      <sidebar-link to="/dashboard">
+      <sidebar-link v-if="getStatus('SECRETAIRE')" to="/dashboard">
         <md-icon>dashboard</md-icon>
         <p>Dashboard Secrétaire</p>
       </sidebar-link>
-      <sidebar-link to="/dashboardM">
+      <sidebar-link v-if="getStatus('MONITEUR')" to="/dashboardM">
         <md-icon>dashboard</md-icon>
         <p>Dashboard Moniteur</p>
       </sidebar-link>
-      <sidebar-link to="/dashboardc">
+      <sidebar-link v-if="getStatus('ELEVE')" to="/dashboardc">
         <md-icon>dashboard</md-icon>
         <p>Dashboard Elève</p>
       </sidebar-link>
@@ -36,7 +36,7 @@
         <md-icon>location_on</md-icon>
         <p>Maps</p>
       </sidebar-link>-->
-      <sidebar-link to="/notifications">
+      <sidebar-link v-if="getStatus('SECRETAIRE')" to="/notifications">
         <md-icon>notifications</md-icon>
         <p>Notifications</p>
       </sidebar-link><!--
@@ -81,17 +81,13 @@
     },
     created(){
       if (!localStorage.status)
-        localStorage.status = status = "eleve";
+        status = "ELEVE";
     },
     methods: {
-      isEleve: function() {
-        localStorage.status = status = "eleve";
-      },
-      isMoniteur: function() {
-        localStorage.status = status = "moniteur";
-      },
-      isSecretaire: function() {
-        localStorage.status = status = "secretaire";
+      getStatus: function(statut){
+        let test = localStorage.getItem("infosUser");
+        console.log(JSON.parse(test))
+        return localStorage.getItem("statut") === statut
       }
     }
   };
