@@ -90,13 +90,13 @@
         if(e.email === this.email && e.password === this.pass){
             switch(e.role) {
                 case 'SECRETAIRE':
-                    this.$router.push({ name: 'Dashboard' })
+                    this.$router.push({ name: 'Dashboard', params: {member: e }})
                     break;
                 case 'ELEVE':
-                    this.$router.push({ name: 'Dashboardm' })
+                    this.$router.push({ name: 'Dashboardm', params: {member: e }})
                     break;
                 case 'MONITEUR':
-                    this.$router.push({ name: 'Dashboardc' })
+                    this.$router.push({ name: 'Dashboardc', params: {member: e } })
                     break;
                 default:
                     break;
