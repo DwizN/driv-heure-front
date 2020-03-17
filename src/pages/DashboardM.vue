@@ -23,7 +23,7 @@
                 </vue-cal>
             </div>
             <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-35" id="student">
-                <student-folder v-on:form-closed="formClosed" v-if="boxIsVisible" :eleve="eleve"></student-folder> <!-- Ici tu passes ton objet élève qui va être dispo dans tes datas de create-sence -->
+                <student-folder v-on:form-closed="formClosed" v-on:del_seance="delSeance" v-if="boxIsVisible" :eleve="eleve"></student-folder>
 
             </div>
         </div>
@@ -50,7 +50,7 @@
                     {"nom":"LECOEUCHE","prenom":"Axel", "date":"18/10/1998", "heures": "20", "isCode" : "OUI", "points": "demi-tour en 3 temps, voyant moteur"},
                     {"nom":"BENRHINMA","prenom":"Mouad", "date":"01/04/1995", "heures": "108", "isCode" : "NON"},
                     {"nom":"VALISE","prenom":"Bernard", "date":"01/12/12000", "heures": "6", "isCode" : "OUI"}
-                ], // Ici tu vas alimenter ton objet (surement un élève ? que tu vas passer en props à ton composant create-seance)
+                ],
 
                 dailySalesChart: {
                     data: {
@@ -190,6 +190,8 @@
             };
         },
         methods: {
+
+            //le but était de sortir la fiche élève avec les infos correspondantes
             simuleStudentFolder: function () {
                 this.boxIsVisible = true
                 this.eleves.forEach(e => {
@@ -207,6 +209,9 @@
             },
             formClosed: function () {
                 this.boxIsVisible = false;
+            },
+            delSeance: function (){
+
             }
         }
 

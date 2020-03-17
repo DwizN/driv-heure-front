@@ -12,6 +12,12 @@
                             <md-input v-model="nom" type="text"></md-input>
                         </md-field>
                     </div>
+                    <div class="md-layout-item md-xsmall-size-100 md-small-size-50 md-size-50">
+                    <md-field>
+                        <label class="time-label">Prénom :</label>
+                        <md-input v-model="prenom" type="text"></md-input>
+                    </md-field>
+                </div>
                     <div class="md-layout-item md-small-size-100 md-size-100">
                         <md-datepicker v-model="date" :md-open-on-focus="false" />
                     </div>
@@ -39,7 +45,7 @@
                     </div>
                     <div class="md-layout-item md-size-100 text-center">
                         <md-button class="md-raised md-default" @click="close">OK</md-button>
-                        <md-button class="md-raised md-default">Annuler séance</md-button>
+                        <md-button class="md-raised md-default" @click="deleteSeance">Annuler séance</md-button>
                     </div>
                 </div>
             </md-card-content>
@@ -58,10 +64,11 @@
         methods: {
             close: function () {
                 this.$emit('form-closed')
+            },
+            deleteSeance: function (){
+                this.$emit('del-seance');
             }
-
         }
-
     }
 </script>
 
